@@ -1,7 +1,7 @@
 # coding=utf-8
 
 """
-Diamond collector for HBase Master metrics, see:
+Diamond collector for HBase Master metrics
 """
 
 from urllib2 import urlopen
@@ -16,10 +16,10 @@ def bean_metric(prefix):
             while True:
                 try:
                     path, value = itr.next()
-                    if path.lower().find("modelertype") == 0 or \
+                    if path.lower() == "modelertype" or \
                             path.lower().find("tag.") == 0 or \
-                            path.lower().find("name") == 0 or \
-                            path.lower().find("objectname") == 0:
+                            path.lower() == "name" or \
+                            path.lower() == "objectname":
                         continue
                     if not type(value) is int:
                         continue
