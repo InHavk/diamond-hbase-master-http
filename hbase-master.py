@@ -22,7 +22,7 @@ def bean_metric(prefix):
                             path.lower() == "objectname":
                         continue
                     try:
-                        value = int(value)
+                        value = float(value)
                     except:
                         continue
                     path = path.replace(".", "_")
