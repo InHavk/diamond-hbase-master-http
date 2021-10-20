@@ -94,7 +94,7 @@ class HBaseMasterCollector(diamond.collector.Collector):
                     continue
                 func = self.BEANS_MAP[bean_name]
                 for path, value in func(bean):
-                    self.publish(path, value)
+                    self.publish(path, value, precision=2)
         except URLError:
             pass
 
